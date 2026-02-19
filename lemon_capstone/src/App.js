@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
@@ -6,14 +7,16 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <div className="top-bar">
-        <Header />
-        <Nav />
+    <BrowserRouter>
+      <div className="App">
+        <div className="top-bar">
+          <Header />
+          <Nav />
+        </div>
+        <Main />
+        <Footer />
       </div>
-      <Main />
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
