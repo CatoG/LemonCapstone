@@ -1,9 +1,9 @@
 function About() {
   return (
     <section className="stub-page" aria-labelledby="about-title">
-      <h1 id="about-title">About Little Lemon</h1>
+      <h1 id="about-title">About Reactive Lemon</h1>
       <p>
-        Little Lemon is a family-owned Mediterranean restaurant founded by two
+        Reactive Lemon is a family-owned Mediterranean restaurant founded by two
         brothers who wanted to share the flavors of their heritage with
         Chicago. Every dish is crafted from traditional recipes with fresh,
         seasonal ingredients sourced locally wherever possible.

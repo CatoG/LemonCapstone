@@ -1,6 +1,6 @@
-# Little Lemon Restaurant — Capstone Project
+# Reactive Lemon Restaurant — Capstone Project
 
-A React web application for the **Little Lemon** Mediterranean restaurant in Chicago. The app allows customers to browse the menu, learn about the restaurant, and reserve a table online.
+A React web application for the **Reactive Lemon** Mediterranean restaurant in Chicago. The app allows customers to browse the menu, learn about the restaurant, and reserve a table online.
 
 ---
 

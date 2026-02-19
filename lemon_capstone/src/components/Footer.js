@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-brand">
-        <img src="/logo192.png" alt="Little Lemon logo" width="36" height="36" />
-        <p>Little Lemon</p>
+        <img src="/logo192.png" alt="Reactive Lemon logo" width="36" height="36" />
+        <p>Reactive Lemon</p>
       </div>
 
       <nav aria-labelledby="footer-nav-heading">

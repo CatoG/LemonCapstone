@@ -4,7 +4,7 @@ function BookingPage({ availableTimes, dispatch, bookingData, submitForm }) {
   return (
     <section className="booking-page" aria-labelledby="booking-title">
       <h1 id="booking-title">Reserve a table</h1>
-      <p>Book your table at Little Lemon in just a few steps.</p>
+      <p>Book your table at Reactive Lemon in just a few steps.</p>
       <BookingForm
         availableTimes={availableTimes}
         dispatch={dispatch}

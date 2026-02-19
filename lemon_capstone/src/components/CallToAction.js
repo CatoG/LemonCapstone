@@ -4,7 +4,7 @@ function CallToAction() {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <h1 id="hero-title">Little Lemon</h1>
+        <h1 id="hero-title">Reactive Lemon</h1>
         <h2>Chicago</h2>
         <p>
           We are a family owned Mediterranean restaurant, focused on
