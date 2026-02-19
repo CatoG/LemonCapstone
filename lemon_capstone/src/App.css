@@ -130,7 +130,8 @@ main,
   font-weight: 700;
 }
 
-.cta-link {
+.cta-link,
+.site-nav a.cta-link {
   background: #495e57;
   color: #ffffff;
   padding: 0.35rem 0.72rem;

@@ -1,70 +1,181 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant — Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React web application for the **Little Lemon** Mediterranean restaurant in Chicago. The app allows customers to browse the menu, learn about the restaurant, and reserve a table online.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Setup & Installation](#setup--installation)
+- [Running the App](#running-the-app)
+- [Running Tests](#running-tests)
+- [Building for Production](#building-for-production)
+- [Key Implementation Details](#key-implementation-details)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Homepage** — hero section, weekly specials, customer testimonials, and restaurant story
+- **Table reservations** — date/time picker driven by a live availability API, controlled form with full client-side validation
+- **Booking confirmation** — dedicated confirmation page after a successful reservation
+- **Confirmed reservations table** — persisted to `localStorage` across sessions
+- **Menu page** — full menu grouped by category
+- **About, Order Online & Login pages** — complete navigation with no broken links
+- **Accessibility** — semantic HTML5, ARIA labels, `aria-invalid`/`aria-describedby` on form fields, keyboard-navigable
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technology | Version | Purpose |
+|---|---|---|
+| React | 19.x | UI framework |
+| react-router-dom | 6.x | Client-side routing |
+| react-scripts (CRA) | 5.0.1 | Build tooling |
+| Jest + React Testing Library | 27 / 16.x | Unit testing |
+| @testing-library/jest-dom | 6.x | Custom DOM matchers |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+src/
+  App.js                  # Root component — BrowserRouter + layout
+  App.css                 # Global styles
+  components/
+    Header.js             # Site logo and branding
+    Nav.js                # Main navigation (react-router Links)
+    Footer.js             # Footer nav, contact, social links
+    Main.js               # Route definitions + shared state (useReducer, useState)
+    Homepage.js           # Composes CallToAction, Specials, CustomersSay, Chicago
+    CallToAction.js       # Hero section with Reserve-a-Table CTA
+    Specials.js           # Weekly specials card grid
+    CustomersSay.js       # Customer testimonials
+    Chicago.js            # Restaurant backstory section
+    BookingPage.js        # Reservation page wrapper + confirmed bookings table
+    BookingForm.js        # Controlled form with validation (validate() exported)
+    ConfirmedBooking.js   # Post-submission confirmation page
+    About.js              # About the restaurant
+    Menu.js               # Full menu by category
+    OrderOnline.js        # Order-online coming-soon page
+    Login.js              # Login form
+public/
+  index.html              # HTML entry point
+  api.js                  # window.fetchAPI and window.submitAPI (course-provided)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Node.js** 16 or higher — [download](https://nodejs.org/)
+- **npm** 7 or higher (bundled with Node.js)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Verify your versions:
 
-## Learn More
+```bash
+node --version
+npm --version
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Setup & Installation
 
-### Code Splitting
+1. **Clone the repository**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   git clone <your-repository-url>
+   cd lemon_capstone
+   ```
 
-### Analyzing the Bundle Size
+2. **Install dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm install
+   ```
 
-### Making a Progressive Web App
+   This installs all packages listed in `package.json`, including React, react-router-dom, and the testing libraries.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Running the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+```
 
-### Deployment
+Opens the app at [http://localhost:3000](http://localhost:3000) in your default browser. The page hot-reloads when you edit source files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run all tests once (suitable for CI):
+
+```bash
+npm test -- --watch=false
+```
+
+Run in interactive watch mode (re-runs on file save):
+
+```bash
+npm test
+```
+
+**Current test coverage:**
+
+| Suite | Tests |
+|---|---|
+| `App.test.js` | App renders heading |
+| `BookingForm.test.js` | HTML5 attributes, `validate()` (all fields, valid + invalid), disabled button, inline errors, form submission |
+| `Main.test.js` | `initializeTimes`, `updateTimes`, unknown action, localStorage read on load, localStorage write on submit |
+
+Total: **31 tests across 3 suites** — all passing.
+
+---
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+Outputs optimised static files to the `build/` folder. Serve with any static host (Netlify, Vercel, GitHub Pages, etc.) or locally with:
+
+```bash
+npx serve -s build
+```
+
+---
+
+## Key Implementation Details
+
+### Availability API
+
+`public/api.js` exposes two globals loaded via `<script>` in `index.html`:
+
+- `window.fetchAPI(date)` — returns an array of available time strings for the given `Date` object
+- `window.submitAPI(formData)` — returns `true` on a successful booking
+
+These are mocked in tests via `beforeEach`:
+
+```js
+window.fetchAPI = jest.fn(() => ['17:00', '18:00', '19:00']);
+window.submitAPI = jest.fn(() => true);
+```
+
+### State management
+
+- `availableTimes` — managed with `useReducer` in `Main.js`; `initializeTimes` and `updateTimes` are named exports so they can be unit-tested independently
+- `bookingData` — managed with `useState` in `Main.js`; initialised lazily from `localStorage` and synced back via `useEffect`
+
+### Form validation
+
+`BookingForm.js` exports a pure `validate({ date, time, guests, occasion, availableTimes })` function that returns an errors object. Errors are shown only after a field has been touched (blur) or a submit is attempted. The submit button is disabled whenever the form is invalid.
