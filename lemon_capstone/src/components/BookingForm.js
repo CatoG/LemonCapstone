@@ -9,7 +9,14 @@ function BookingForm({ availableTimes, dispatch, onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSubmit) {
-      onSubmit({ date, time, guests, occasion });
+      const success = onSubmit({ date, time, guests, occasion });
+      if (success !== false) {
+        // Reset form after successful submission
+        setDate('');
+        setTime(availableTimes[0] ?? '17:00');
+        setGuests(2);
+        setOccasion('Birthday');
+      }
     }
   };
 

@@ -438,6 +438,66 @@ main {
   cursor: pointer;
 }
 
+.bookings-table-section {
+  margin-top: 2rem;
+}
+
+.bookings-table-section h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #d9dfdd;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e6eded;
+}
+
+.bookings-table th {
+  background: #495e57;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.bookings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bookings-table tbody tr:hover {
+  background: #f0f4f3;
+}
+
+.confirmed-booking {
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.confirmed-booking h1 {
+  color: #495e57;
+  font-size: 2.25rem;
+}
+
+.confirmed-booking p {
+  font-size: 1rem;
+  color: #4d4d4d;
+}
+
 .site-footer {
   margin-top: 0;
   padding: 2.25rem 1rem;
