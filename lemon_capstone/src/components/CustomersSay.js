@@ -32,7 +32,7 @@ function CustomersSay() {
       <div className="testimonial-grid">
         {testimonials.map((customer) => (
           <article className="testimonial-card" key={customer.id}>
-            <p className="stars">★★★★★</p>
+            <p className="stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
             <div className="customer-row">
               <div className="customer-image" aria-hidden="true" />
               <div className="customer-details">
