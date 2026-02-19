@@ -1,3 +1,6 @@
+import family1930Img from '../images/family-1930.jpg';
+import family2020Img from '../images/family-2020.jpg';
+
 function Chicago() {
   return (
     <section className="chicago-section" aria-labelledby="chicago-title">
@@ -14,8 +17,16 @@ function Chicago() {
         </p>
       </div>
       <div className="chicago-images" aria-hidden="true">
-        <div className="chicago-image-large" />
-        <div className="chicago-image-small" />
+        <img
+          className="chicago-image-large"
+          src={family2020Img}
+          alt="Reactive Lemon family in 2020"
+        />
+        <img
+          className="chicago-image-small"
+          src={family1930Img}
+          alt="Reactive Lemon family in 1930"
+        />
       </div>
     </section>
   );
