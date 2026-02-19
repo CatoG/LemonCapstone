@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import footerLogo from '../images/littleLemonfooterLogo.png';
 
 function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-brand">
-        <img src="/logo192.png" alt="Reactive Lemon logo" width="36" height="36" />
+        <img src={footerLogo} alt="Reactive Lemon logo" width="36" height="36" />
         <p>Reactive Lemon</p>
       </div>
 

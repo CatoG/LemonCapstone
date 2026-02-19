@@ -117,6 +117,11 @@ main,
   text-transform: uppercase;
 }
 
+.site-header img {
+  height: 32px;
+  width: auto;
+}
+
 .site-nav ul {
   display: flex;
   align-items: center;
@@ -195,12 +200,20 @@ main {
   text-decoration: none;
 }
 
+.hero-image-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 230px;
+  min-height: 230px;
+}
+
 .hero-image {
   width: 100%;
-  height: 230px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #1f1f1f, #4a4a4a);
-  transform: translateY(0.5rem);
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
 }
 
 .specials-section {
@@ -235,18 +248,8 @@ main {
 
 .card-image {
   height: 165px;
-}
-
-.salad {
-  background: linear-gradient(120deg, #9ec95d, #f98d4d);
-}
-
-.bruschetta {
-  background: linear-gradient(120deg, #e79c5a, #af4f37);
-}
-
-.dessert {
-  background: linear-gradient(120deg, #f3d87e, #d9b35e);
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-title-row,
@@ -338,7 +341,8 @@ main {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(140deg, #7f8f88, #495e57);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .customer-details .detail {
@@ -610,8 +614,14 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .hero-image-wrap {
+    width: 100%;
+    height: 240px;
+    min-height: 240px;
+  }
+
   .hero-image {
-    max-width: 320px;
+    object-position: 50% 50%;
     margin-left: auto;
     margin-right: auto;
     transform: none;

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import heroImg from '../images/hero.jpg';
 
 function CallToAction() {
   return (
@@ -14,7 +15,13 @@ function CallToAction() {
           Reserve a table
         </Link>
       </div>
-      <div className="hero-image" aria-hidden="true" />
+      <div className="hero-image-wrap">
+        <img
+          className="hero-image"
+          src={heroImg}
+          alt="Reactive Lemon restaurant dishes"
+        />
+      </div>
     </section>
   );
 }
