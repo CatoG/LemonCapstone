@@ -3,6 +3,10 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Homepage from './Homepage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
+import About from './About';
+import Menu from './Menu';
+import OrderOnline from './OrderOnline';
+import Login from './Login';
 
 const defaultTimes = ['17:00', '18:00', '19:00', '20:00', '21:00'];
 
@@ -70,6 +74,10 @@ function Main() {
           }
         />
         <Route path="/confirmed" element={<ConfirmedBooking />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/order-online" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </main>
   );

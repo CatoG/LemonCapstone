@@ -32,7 +32,7 @@ function Specials() {
     <section className="specials-section" aria-labelledby="specials-title">
       <div className="section-heading">
         <h2 id="specials-title">This Weeks Specials</h2>
-        <button type="button">Menu</button>
+        <button type="button" aria-label="View full menu">Menu</button>
       </div>
 
       <div className="card-grid">
@@ -44,7 +44,7 @@ function Specials() {
               <span>{special.price}</span>
             </div>
             <p>{special.description}</p>
-            <Link to="/order-online">Order a delivery</Link>
+            <Link to="/order-online" aria-label={`Order ${special.title} for delivery`}>Order a delivery</Link>
           </article>
         ))}
       </div>

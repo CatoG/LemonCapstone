@@ -47,6 +47,8 @@ test('updateTimes returns current state unchanged for an unknown action type', (
   expect(window.fetchAPI).not.toHaveBeenCalled();
 });
 
+const routerFuture = { v7_startTransition: true, v7_relativeSplatPath: true };
+
 // --- localStorage tests ---
 
 test('reads existing bookings from localStorage on initial render', () => {
@@ -56,21 +58,23 @@ test('reads existing bookings from localStorage on initial render', () => {
   localStorage.setItem('bookingData', JSON.stringify(stored));
 
   render(
-    <MemoryRouter initialEntries={['/reservations']}>
+    <MemoryRouter initialEntries={['/reservations']} future={routerFuture}>
       <Main />
     </MemoryRouter>
   );
 
   expect(screen.getByText('Confirmed Reservations')).toBeInTheDocument();
   expect(screen.getByText('2026-03-01')).toBeInTheDocument();
-  expect(screen.getByText('Birthday')).toBeInTheDocument();
+  // Use getAllByText since "Birthday" also appears in the form select option
+  const birthdayCells = screen.getAllByText('Birthday');
+  expect(birthdayCells.length).toBeGreaterThanOrEqual(1);
 });
 
 test('writes new booking to localStorage after form submission', () => {
   const setItemSpy = jest.spyOn(Storage.prototype, 'setItem');
 
   render(
-    <MemoryRouter initialEntries={['/reservations']}>
+    <MemoryRouter initialEntries={['/reservations']} future={routerFuture}>
       <Main />
     </MemoryRouter>
   );

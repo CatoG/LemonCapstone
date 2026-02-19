@@ -438,6 +438,25 @@ main {
   cursor: pointer;
 }
 
+.booking-form button:disabled {
+  background: #9aaa9e;
+  cursor: not-allowed;
+}
+
+.booking-form input[aria-invalid='true'],
+.booking-form select[aria-invalid='true'] {
+  border-color: #d32f2f;
+  outline-color: #d32f2f;
+}
+
+.field-error {
+  color: #d32f2f;
+  font-size: 0.82rem;
+  margin-top: -0.4rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
 .bookings-table-section {
   margin-top: 2rem;
 }
@@ -658,4 +677,67 @@ main {
     align-items: flex-start;
     gap: 0.7rem;
   }
+}
+
+/* --- Stub / interior pages --- */
+
+.stub-page {
+  padding: 2.4rem 1rem 3.2rem;
+  max-width: 720px;
+}
+
+.stub-page h1 {
+  color: #495e57;
+  margin-bottom: 1rem;
+}
+
+.stub-page h2 {
+  color: #333333;
+  font-size: 1.35rem;
+  margin: 1.8rem 0 0.7rem;
+}
+
+.stub-page p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.stub-page a {
+  color: #495e57;
+  font-weight: 700;
+}
+
+/* Menu page list */
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.menu-list-item {
+  background: #ffffff;
+  border: 1px solid #d9dfdd;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.menu-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+}
+
+.menu-list-name {
+  font-weight: 700;
+  color: #222222;
+}
+
+.menu-list-price {
+  color: #ee9972;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
