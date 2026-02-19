@@ -35,7 +35,7 @@ function Specials() {
     <section className="specials-section" aria-labelledby="specials-title">
       <div className="section-heading">
         <h2 id="specials-title">This Weeks Specials</h2>
-        <button type="button" aria-label="View full menu">Menu</button>
+        <Link className="section-menu-link" to="/menu" aria-label="View full menu">Menu</Link>
       </div>
 
       <div className="card-grid">
