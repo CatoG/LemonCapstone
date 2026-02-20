@@ -46,7 +46,7 @@ A React web application for the **Reactive Lemon** Mediterranean restaurant in C
 
 ```
 src/
-  App.js                  # Root component — BrowserRouter + layout
+  App.js                  # Root component — HashRouter + layout
   App.css                 # Global styles
   components/
     Header.js             # Site logo and branding
